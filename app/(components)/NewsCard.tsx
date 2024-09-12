@@ -6,7 +6,7 @@ import { News } from "../interfaces";
 
 function NewsCard({ news }: { news: News }) {
   return (
-    <Card className="mx-auto max-w-sm animate-fadeIn hover:-translate-y-2 transform hover:shadow-2xl transition duration-300 ease-in-out">
+    <Card className="mx-auto max-w-md animate-fadeIn hover:-translate-y-2 transform hover:shadow-2xl transition duration-300 ease-in-out">
       <div className="relative max-w-xl h-60">
         {
           // eslint-disable-next-line @next/next/no-img-element
