@@ -6,14 +6,14 @@ import { News } from "../interfaces";
 
 function NewsCard({ news }: { news: News }) {
   return (
-    <Card className="max-w-sm hover:-translate-y-2 transform hover:shadow-2xl transition duration-300 ease-in-out">
+    <Card className="mx-auto max-w-sm animate-fadeIn hover:-translate-y-2 transform hover:shadow-2xl transition duration-300 ease-in-out">
       <div className="relative max-w-xl h-60">
         {
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="w-full h-60 rounded-t-sm"
+            className="w-full h-60 rounded-t-sm object-cover"
             src={news.image}
-            alt="Random image"
+            alt="news image"
           />
         }
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-t-sm"></div>
@@ -32,9 +32,7 @@ function NewsCard({ news }: { news: News }) {
       </CardContent>
       <CardFooter className="px-6 py-3 bg-gray-50 overflow-hidden rounded-b-sm">
         <div className="w-full flex items-center justify-between">
-          <div text-sm text-gray-600>
-            {news.source.name}
-          </div>
+          <div className="text-sm text-gray-600">{news.source.name}</div>
           <Button variant="outline" asChild>
             <Link href={news.url} replace target="_blank">
               <div className="w-full flex gap-x-2 items-center justify-between">
