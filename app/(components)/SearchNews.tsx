@@ -5,7 +5,6 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuPortal,
   DropdownMenuSub,
   DropdownMenuSubContent,
@@ -14,10 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Check, Search } from "lucide-react";
-import { countries, languages } from "../services/static-data";
-import { useRef, useState } from "react";
+import { Search } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useRef, useState } from "react";
+import { countries, languages } from "../services/static-data";
 
 function SearchNews() {
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -25,9 +24,9 @@ function SearchNews() {
   const searchRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
 
   const search = () => {
-    const params = new URLSearchParams(searchParams);
     params.set("q", searchRef.current!.value);
     params.set("country", selectedCountry);
     params.set("lang", selectedLanguage);
@@ -40,6 +39,7 @@ function SearchNews() {
         <Search className="h-5 w-5" />
         <Input
           ref={searchRef}
+          defaultValue={params.get("q") || ""}
           placeholder="Search News"
           className="max-w-md bg-white rounded-full"
         />

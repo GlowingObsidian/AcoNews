@@ -1,10 +1,11 @@
 import Hero from "./(components)/Hero";
-import NavBar from "./(components)/NavBar";
 import NewsCard from "./(components)/NewsCard";
 import Search from "./(components)/SearchHeadlines";
+import { Yellowtail } from "next/font/google";
 import { News } from "./interfaces";
-import apiClient from "./services/api-client";
 import { data } from "./services/static-data";
+
+const caveat = Yellowtail({ subsets: ["latin"], weight: ["400"] });
 
 async function page({
   searchParams,
@@ -32,11 +33,15 @@ async function page({
 
   return (
     <div>
-      <NavBar />
       <Hero news={news[id]} />
-      <div className="my-10 space-y-10 px-5 md:p-10">
-        <h1 className="text-center font-bold text-3xl md:text-5xl">
-          Top Headlines
+      <div className="my-10 space-y-10 px-5 md:px-10">
+        <h1
+          className={
+            "text-center font-extrabold text-3xl md:text-5xl " +
+            caveat.className
+          }
+        >
+          Hot off the press
         </h1>
         <Search />
         <div className="grid gap-x-12 gap-y-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
