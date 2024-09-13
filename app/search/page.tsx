@@ -1,4 +1,5 @@
 import NewsCard from "../(components)/NewsCard";
+import NoNewsFound from "../(components)/NoNewsFound";
 import { News } from "../interfaces";
 import apiClient from "../services/api-client";
 
@@ -20,6 +21,8 @@ async function page({
   });
 
   const news: News[] = response.data.articles;
+
+  if (news.length === 0) return <NoNewsFound />;
 
   return (
     <div className="my-10 space-y-10 px-5 md:px-10">

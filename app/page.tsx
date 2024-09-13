@@ -1,10 +1,11 @@
 import { Yellowtail } from "next/font/google";
+import { Suspense } from "react";
 import Hero from "./(components)/Hero";
 import NewsCard from "./(components)/NewsCard";
+import NoNewsFound from "./(components)/NoNewsFound";
 import SearchHeadlines from "./(components)/SearchHeadlines";
 import { News } from "./interfaces";
 import apiClient from "./services/api-client";
-import { Suspense } from "react";
 
 const caveat = Yellowtail({ subsets: ["latin"], weight: ["400"] });
 
@@ -27,6 +28,8 @@ async function page({
   });
 
   const news: News[] = response.data.articles;
+
+  if (news.length === 0) return <NoNewsFound />;
 
   const id = Math.floor(Math.random() * 10);
 
