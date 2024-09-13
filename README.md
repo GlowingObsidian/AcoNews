@@ -1,5 +1,3 @@
-Here's an updated version of your `README.md` including the new features:
-
 # AcoNews
 
 AcoNews is a modern news website built using Next.js and React.js. It fetches the latest news from the [GNews.io API](https://gnews.io/) and displays it in a sleek, responsive user interface styled with Tailwind CSS and the `shad/cn` UI library. The website supports server-side rendering (SSR) to enhance performance and SEO. Additionally, users can search and filter news articles based on country, category, and language.
