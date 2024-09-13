@@ -23,7 +23,10 @@ function Hero({ news }: { news: News }) {
           <p className="hidden text-gray-300 md:block text-md lg:text-lg">
             {news.description}
           </p>
-          <Button asChild className="text-sm md:max-w-48 md:text-lg">
+          <Button
+            asChild
+            className="rounded-full text-sm md:max-w-48 md:text-lg"
+          >
             <Link target="_blank" href={news.url}>
               <div className="w-full flex gap-x-2 items-center justify-between">
                 <p>Read Full Story</p> <ExternalLink />

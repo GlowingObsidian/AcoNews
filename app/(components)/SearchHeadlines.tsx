@@ -21,7 +21,6 @@ function SearchHeadlines() {
   const searchParams = useSearchParams();
 
   const search = () => {
-    console.log();
     const params = new URLSearchParams(searchParams);
     params.set("q", searchRef.current!.value);
     params.set("category", selectedCategory);
@@ -50,7 +49,7 @@ function SearchHeadlines() {
             </SelectTrigger>
             <SelectContent>
               {categories.map((category) => (
-                <SelectItem value={category}>
+                <SelectItem key={category} value={category}>
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </SelectItem>
               ))}
@@ -64,7 +63,9 @@ function SearchHeadlines() {
             </SelectTrigger>
             <SelectContent>
               {Object.keys(countries).map((country) => (
-                <SelectItem value={country}>{country}</SelectItem>
+                <SelectItem key={country} value={country}>
+                  {country}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>

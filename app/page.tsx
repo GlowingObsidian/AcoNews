@@ -4,6 +4,7 @@ import NewsCard from "./(components)/NewsCard";
 import Search from "./(components)/SearchHeadlines";
 import { News } from "./interfaces";
 import apiClient from "./services/api-client";
+import { data } from "./services/static-data";
 
 async function page({
   searchParams,
@@ -14,18 +15,20 @@ async function page({
     country?: string;
   };
 }) {
-  const response = await apiClient.get("top-headlines", {
-    params: {
-      lang: "en",
-      q: searchParams.q,
-      country: searchParams.country,
-      category: searchParams.category,
-    },
-  });
+  // const response = await apiClient.get("top-headlines", {
+  //   params: {
+  //     lang: "en",
+  //     q: searchParams.q,
+  //     country: searchParams.country,
+  //     category: searchParams.category,
+  //   },
+  // });
+
+  // const news: News[] = response.data.articles;
+
+  const news: News[] = data;
 
   const id = Math.floor(Math.random() * 10);
-
-  const news: News[] = response.data.articles;
 
   return (
     <div>
