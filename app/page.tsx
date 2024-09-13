@@ -1,9 +1,10 @@
 import { Yellowtail } from "next/font/google";
 import Hero from "./(components)/Hero";
 import NewsCard from "./(components)/NewsCard";
-import Search from "./(components)/SearchHeadlines";
+import SearchHeadlines from "./(components)/SearchHeadlines";
 import { News } from "./interfaces";
 import apiClient from "./services/api-client";
+import { Suspense } from "react";
 
 const caveat = Yellowtail({ subsets: ["latin"], weight: ["400"] });
 
@@ -41,7 +42,9 @@ async function page({
         >
           Hot off the press
         </h1>
-        <Search />
+        <Suspense>
+          <SearchHeadlines />
+        </Suspense>
         <div className="grid gap-x-12 gap-y-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {news.map(
             (article, index) =>

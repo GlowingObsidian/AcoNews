@@ -2,6 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import SearchNews from "./SearchNews";
 import SearchNewsMobile from "./SearchNewsMobile";
+import { Suspense } from "react";
 
 function NavBar() {
   return (
@@ -10,8 +11,10 @@ function NavBar() {
         <Link href="/">
           <Logo />
         </Link>
-        <SearchNews />
-        <SearchNewsMobile />
+        <Suspense>
+          <SearchNews />
+          <SearchNewsMobile />
+        </Suspense>
       </div>
     </nav>
   );

@@ -17,7 +17,8 @@ function Error() {
         Oops! An Error Occurred
       </h1>
       <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-[hsl(var(--muted-foreground))] text-center max-w-md">
-        We're sorry, but something went wrong while processing your request.
+        We&apos;re sorry, but something went wrong while processing your
+        request.
       </p>
       <div className="flex items-center space-x-4">
         <Button variant="default" className="flex items-center" asChild>
