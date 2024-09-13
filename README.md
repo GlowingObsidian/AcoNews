@@ -16,8 +16,8 @@ AcoNews is a modern news website built using Next.js and React.js. It fetches th
 
 ## Tech Stack
 
-- **Backend:** [Next.js](https://nextjs.org/)
-- **Frontend:** [React.js](https://reactjs.org/)
+- **Backend:** [Next.js](https://nextjs.org/) (Typescript)
+- **Frontend:** [React.js](https://reactjs.org/) (Typescript)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/), [shad/cn UI Library](https://shadcn.dev/)
 - **API:** [GNews.io API](https://gnews.io/)
 - **HTTP Client:** [Axios](https://axios-http.com/)
