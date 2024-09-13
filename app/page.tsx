@@ -1,9 +1,9 @@
+import { Yellowtail } from "next/font/google";
 import Hero from "./(components)/Hero";
 import NewsCard from "./(components)/NewsCard";
 import Search from "./(components)/SearchHeadlines";
-import { Yellowtail } from "next/font/google";
 import { News } from "./interfaces";
-import { data } from "./services/static-data";
+import apiClient from "./services/api-client";
 
 const caveat = Yellowtail({ subsets: ["latin"], weight: ["400"] });
 
@@ -16,18 +16,16 @@ async function page({
     country?: string;
   };
 }) {
-  // const response = await apiClient.get("top-headlines", {
-  //   params: {
-  //     lang: "en",
-  //     q: searchParams.q,
-  //     country: searchParams.country,
-  //     category: searchParams.category,
-  //   },
-  // });
+  const response = await apiClient.get("top-headlines", {
+    params: {
+      lang: "en",
+      q: searchParams.q,
+      country: searchParams.country,
+      category: searchParams.category,
+    },
+  });
 
-  // const news: News[] = response.data.articles;
-
-  const news: News[] = data;
+  const news: News[] = response.data.articles;
 
   const id = Math.floor(Math.random() * 10);
 

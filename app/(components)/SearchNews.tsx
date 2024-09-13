@@ -34,7 +34,7 @@ function SearchNews() {
   };
 
   return (
-    <div className="flex gap-x-3">
+    <div className="hidden md:flex gap-x-3">
       <div className="flex items-center gap-x-2">
         <Search className="h-5 w-5" />
         <Input

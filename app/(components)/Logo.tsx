@@ -6,7 +6,7 @@ const poppins = Poppins({
 });
 function Logo() {
   return (
-    <div className={"text-4xl font-bold text-blue-500 " + poppins.className}>
+    <div className={"text-2xl font-bold text-blue-500 " + poppins.className}>
       aconews
     </div>
   );

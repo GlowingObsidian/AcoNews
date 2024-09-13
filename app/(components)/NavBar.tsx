@@ -1,16 +1,17 @@
-import { Newspaper } from "lucide-react";
+import Link from "next/link";
 import Logo from "./Logo";
 import SearchNews from "./SearchNews";
-import Link from "next/link";
+import SearchNewsMobile from "./SearchNewsMobile";
 
 function NavBar() {
   return (
-    <nav className="sticky top-0 w-full z-50 p-3 bg-white/30 backdrop-blur-md border-b border-white/10 shadow-lg flex justify-between items-center">
-      <div className="container mx-auto flex justify-between">
+    <nav className="sticky top-0 w-full z-50 p-3 bg-white/30 backdrop-blur-md border-b border-white/10 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <Logo />
         </Link>
         <SearchNews />
+        <SearchNewsMobile />
       </div>
     </nav>
   );
