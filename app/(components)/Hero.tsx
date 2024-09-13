@@ -20,7 +20,7 @@ function Hero({ news }: { news: News }) {
           <h1 className="text-lg md:text-3xl lg:text-5xl font-bold">
             {news.title}
           </h1>
-          <p className="hidden md:block text-md lg:text-lg">
+          <p className="hidden text-gray-300 md:block text-md lg:text-lg">
             {news.description}
           </p>
           <Button asChild className="text-sm md:max-w-48 md:text-lg">
