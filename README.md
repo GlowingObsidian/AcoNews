@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here's an updated version of your `README.md` including the new features:
 
-## Getting Started
+# AcoNews
 
-First, run the development server:
+AcoNews is a modern news website built using Next.js and React.js. It fetches the latest news from the [GNews.io API](https://gnews.io/) and displays it in a sleek, responsive user interface styled with Tailwind CSS and the `shad/cn` UI library. The website supports server-side rendering (SSR) to enhance performance and SEO. Additionally, users can search and filter news articles based on country, category, and language.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Server-Side Rendering (SSR):** All pages are rendered on the server for improved performance and SEO.
+- **Responsive Design:** Fully responsive across devices, ensuring a seamless experience.
+- **GNews.io API Integration:** Fetches live news articles using Axios, with support for searching and filtering by country, category, and language.
+- **Modern UI:** Utilizes the `shad/cn` UI library for an elegant, user-friendly design.
+- **Backend and Frontend Separation:** The frontend is developed with React.js, while the backend is handled by Next.js.
+- **Hosted on Vercel:** The website is deployed and hosted using Vercel for easy scalability and reliability.
+- **Iterative Incremental Model:** Developed using the iterative incremental model of software engineering to ensure continuous improvement and refinement.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Backend:** [Next.js](https://nextjs.org/)
+- **Frontend:** [React.js](https://reactjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/), [shad/cn UI Library](https://shadcn.dev/)
+- **API:** [GNews.io API](https://gnews.io/)
+- **HTTP Client:** [Axios](https://axios-http.com/)
+- **Hosting:** [Vercel](https://vercel.com/)
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+To run the project locally, follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```
+   git clone https://github.com/GlowingObsidian/AcoNews.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd AcoNews
+   ```
+3. Install the dependencies:
+   ```
+   npm install
+   ```
+4. Set up environment variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Create a `.env` file in the root directory and add your GNews API key:
 
-## Deploy on Vercel
+   ```bash
+   GNEWS_API_KEY=your_gnews_api_key
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Run the development server:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+   The website will be available at `http://localhost:3000`.
+
+## Usage
+
+- On the homepage, users will see a list of the latest news article cards fetched from the GNews API.
+- Users can search and filter articles based on country, category, and language.
+- Clicking on the "Read more" link for any article will navigate to a detailed page displaying the full content of the article.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the project, feel free to fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
